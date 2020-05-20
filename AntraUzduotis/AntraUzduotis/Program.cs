@@ -29,8 +29,8 @@ namespace AntraUzduotis
                     Matrica1 matrica1 = new Matrica1(m1, n1);
                     Matrica2 matrica2 = new Matrica2(m2, n2);
                     AutomatinisMatricuUzpildymas(m1, n1, matrica1, m2, n2, matrica2);
-                    MatricuSudetis(matrica1, matrica2);
-                    MatricuAtimtis(matrica1, matrica2);
+                    MatricuSudetis(m1, n1, matrica1, m2, n2, matrica2);
+                    MatricuAtimtis(m1, n1, matrica1, m2, n2, matrica2);
 
                     
                 }
@@ -53,7 +53,7 @@ namespace AntraUzduotis
                 {
                     for (int j = 0; j < n1; j++)
                     {
-                        A[i, j] = i + j;
+                        A.matrica[i, j] = i + j;
                     }
                 }
             
@@ -65,24 +65,23 @@ namespace AntraUzduotis
                 {
                     for (int j = 0; j < n2; j++)
                     {
-                        B[i, j] = i + j + 5;
+                        B.matrica[i, j] = i + j + 5;
                     }
                 }
             
         }
 
-        static void MatricuSudetis(Matrica1 A, Matrica2 B)
+        static void MatricuSudetis(int m1, int n1, Matrica1 A, int m2, int n2, Matrica2 B)
         {
-            int[,] C = new int[A.matrica.GetUpperBound(0) + 1, A.matrica.Length / A.matrica.GetUpperBound(0) + 1];
+            int[,] C = new int[m1, n1];
 
-            if((A.matrica.GetUpperBound(0) + 1 == B.matrica.GetUpperBound(0) + 1) &&
-                A.matrica.Length / A.matrica.GetUpperBound(0) + 1 == B.matrica.Length / B.matrica.GetUpperBound(0) + 1)
+            if((m1 == m2) && n1 == n2)
             {
-                for (int i = 0; i < A.matrica.GetUpperBound(0) + 1; i++)
+                for (int i = 0; i < m1; i++)
                 {
-                    for (int j = 0; j < A.matrica.Length / A.matrica.GetUpperBound(0) + 1; j++)
+                    for (int j = 0; j < n1; j++)
                     {
-                        C[i, j] = A[i, j] + B[i, j];
+                        C[i, j] = A.matrica[i, j] + B.matrica[i, j];
                     }
                 }
             }
@@ -100,18 +99,17 @@ namespace AntraUzduotis
             }
         }
 
-        static void MatricuAtimtis(Matrica1 A, Matrica2 B)
+        static void MatricuAtimtis(int m1, int n1, Matrica1 A, int m2, int n2, Matrica2 B)
         {
-            int[,] C = new int[A.matrica.GetUpperBound(0) + 1, A.matrica.Length / A.matrica.GetUpperBound(0) + 1];
+            int[,] C = new int[m1, n1];
 
-            if ((A.matrica.GetUpperBound(0) + 1 == B.matrica.GetUpperBound(0) + 1) &&
-                A.matrica.Length / A.matrica.GetUpperBound(0) + 1 == B.matrica.Length / B.matrica.GetUpperBound(0) + 1)
+            if ((m1 == m2) && n1 == n2)
             {
-                for (int i = 0; i < A.matrica.GetUpperBound(0) + 1; i++)
+                for (int i = 0; i < m1; i++)
                 {
-                    for (int j = 0; j < A.matrica.Length / A.matrica.GetUpperBound(0) + 1; j++)
+                    for (int j = 0; j < n1; j++)
                     {
-                        C[i, j] = A[i, j] - B[i, j];
+                        C[i, j] = A.matrica[i, j] - B.matrica[i, j];
                     }
                 }
             }
