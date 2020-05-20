@@ -34,11 +34,11 @@ namespace PataisytaAntraUzduotis
                     //Noreciau, kad paaiskintumet sita vieta, nes uzkomentavus, nebepersiduoda n ir m reiksmes i matricas
                     //----------------------------------
                     var matrica01 = new Matrica1(m1, n1);
-                    var matrica02 = new Matrica2(m2, n2);
+                    var matrica02 = new Matrica1(m2, n2);
                     //----------------------------------
 
                     var matrica1 = new Matrica1(m1, n1).matrica;
-                    var matrica2 = new Matrica2(m2, n2).matrica;
+                    var matrica2 = new Matrica1(m2, n2).matrica;
                         AutomatinisMatricuUzpildymas(m1, n1, matrica1, m2, n2, matrica2);
                         MatricuSudetis(m1, n1, matrica1, m2, n2, matrica2);
                         MatricuAtimtis(m1, n1, matrica1, m2, n2, matrica2);
